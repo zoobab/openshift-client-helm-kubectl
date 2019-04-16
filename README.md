@@ -1,0 +1,16 @@
+Docker container with Openshift client, helm and kubectl
+========================================================
+
+A merge of 2 Dockerfiles:
+
+* https://github.com/dtzar/helm-kubectl/blob/master/Dockerfile
+* https://github.com/zoobab/openshift-client/blob/master/Dockerfile
+
+Usage examples
+==============
+
+```
+$ docker run -it -e TILLER_NAMESPACE=kong -v $PWD/conf.d/:/config -v ~/.kube:/root/.kube dtzar/helm-kubectl:2.9.1 helm ls
+NAME                    REVISION        UPDATED                         STATUS          CHART           NAMESPACE
+tinseled-dolphin        2               Tue Apr 16 11:37:53 2019        DEPLOYED        kong-0.9.18     kong
+```
